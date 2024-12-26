@@ -1,7 +1,10 @@
-import React, { memo, FC } from "react";
+import React, { memo, ReactNode, FC } from "react";
 
-const Download: FC= () => {
-    return <div>444</div>
+interface IProps {
+    children?: ReactNode
 }
 
+const Download: FC<IProps> = () => {
+    return <></>
+}
 export default memo(Download);

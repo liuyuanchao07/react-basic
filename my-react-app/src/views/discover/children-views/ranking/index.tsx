@@ -4,7 +4,7 @@ interface IProps {
     children?: ReactNode
 }
 
-const Mine: FC<IProps> = () => {
-    return <></>
+const Ranking: FC<IProps> = () => {
+    return <>paihangbang</>
 }
-export default memo(Mine);
+export default memo(Ranking);

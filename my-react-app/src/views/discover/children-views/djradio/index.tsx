@@ -4,7 +4,7 @@ interface IProps {
     children?: ReactNode
 }
 
-const Mine: FC<IProps> = () => {
+const Djradio: FC<IProps> = () => {
     return <></>
 }
-export default memo(Mine);
+export default memo(Djradio);
