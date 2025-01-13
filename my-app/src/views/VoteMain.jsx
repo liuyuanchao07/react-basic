@@ -3,7 +3,7 @@ import ThemeContext from "../ThemeContext";
 
 const VoteMain = () => {
     let { store } = useContext(ThemeContext);
-    let { supNum, oppNum } = store.getState();
+    let { supNum, oppNum } = store.getState().vote;
 
     let [num, setNum] = useState(0);
   

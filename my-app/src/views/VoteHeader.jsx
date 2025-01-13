@@ -4,7 +4,7 @@ import ThemeContext from "../ThemeContext";
 
 const VoteHeader = () => {
   let { store } = useContext(ThemeContext);
-  let { supNum, oppNum } = store.getState();
+  let { supNum, oppNum } = store.getState().vote;
 
   let [num, setNum] = useState(0);
   

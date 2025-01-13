@@ -26,7 +26,7 @@
 */
 
 import { createStore, applyMiddleware } from "redux";
-import reducer from "./reducer.js";
+import reducer from "./reducers";
 import reduxLogger from "redux-logger";
 
 /* 创建store公共容器 */

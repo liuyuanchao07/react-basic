@@ -1,4 +1,5 @@
 import { cloneDeep } from "lodash";
+import * as TYPES from "../actionTypes"
 
 let initial = {
   supNum: 10,
@@ -6,7 +7,7 @@ let initial = {
 };
 
 /* 管理员: 修改STORE容器中的公共状态 */
-const reducer = (state = initial, action) => {
+const voteReducer = (state = initial, action) => {
     /* 
       state: 存储store容器中的公共状态（最开始没有的时候赋值初始值）
       action: 派发的行为对象 必须具有type属性存储派发的行为标识
@@ -22,12 +23,12 @@ const reducer = (state = initial, action) => {
       第二次派发: state是公共容器里的值 action是组件中手动派发的dispatch
     */
     const cloneObj = cloneDeep(state);
-    if (action.type === "VOTE_SUP") {
+    if (action.type === TYPES.VOTE_SUP) {
       cloneObj.supNum++;
-    } else if (action.type === "VOTE_OPP") {
+    } else if (action.type === TYPES.VOTE_OPP) {
       cloneObj.oppNum++;
     };
     // return的内容会整体替换store容器中的内容
     return cloneObj;
 };
-export default reducer;
+export default voteReducer;

@@ -1,4 +1,5 @@
 import ThemeContext from "../ThemeContext";
+import * as TYPES from "../store/actionTypes";
 import { useContext } from "react";
 
 const VoteFooter = () => {
@@ -10,12 +11,12 @@ const VoteFooter = () => {
             VoteFooter:
             <button onClick={() => {
                 store.dispatch({
-                    type: "VOTE_SUP"
+                    type: TYPES.VOTE_SUP
                 })
             }}>支持</button>
             <button onClick={() => {
                 store.dispatch({
-                    type: "VOTE_OPP"
+                    type: TYPES.VOTE_OPP
                 })
             }}>反对</button>
         </div>
