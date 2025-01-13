@@ -1,8 +1,10 @@
 
-import { useContext, useEffect, useState } from "react";
-import ThemeContext from "../ThemeContext";
+// import { useContext, useEffect, useState } from "react";
+// import ThemeContext from "../ThemeContext";
+import { connect } from "react-redux";
 
-const VoteHeader = () => {
+const VoteHeader = (props) => {
+  /*
   let { store } = useContext(ThemeContext);
   let { supNum, oppNum } = store.getState().vote;
 
@@ -21,9 +23,18 @@ const VoteHeader = () => {
       unsubscribe();
     };
   }, [num]);
+  */
+
+  let { supNum, oppNum } = props;
 
   return (
     <div>VoteHeader: 合计 { supNum + oppNum }</div>
   )
 }
-export default VoteHeader;
+export default connect(state => state.vote)(VoteHeader);
+
+/* 
+  connect(mapStateToProps, mapDispatchToProps)(component)
+  mapStateToProps: 可以获取到redux中的公共状态 需要的信息作为属性props传递给组件即可
+  mapDispatchToProps: 把需要派发的任务 当作属性props传递给组件
+*/
