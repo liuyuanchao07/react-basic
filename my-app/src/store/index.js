@@ -27,10 +27,20 @@
 
 import { createStore, applyMiddleware } from "redux";
 import reducer from "./reducers";
+/*
+  redux中间件: 在dispatch派发到reducer之间有一些中间件处理
+    https://cn.redux.js.org/api/applymiddleware/
+  + redux-logger: 每一次派发在控制台输出派发日志方便调试
+　  「输出的内容: 派发之前的状态 派发行为 派发后的状态」
+  + redux-thunk: 用于异步派发
+  + redux-promise: 用于异步派发
+*/
 import reduxLogger from "redux-logger";
+import { thunk } from 'redux-thunk';
+import reduxPromise from "redux-promise";
 
 /* 创建store公共容器 */
-const store = createStore(reducer, applyMiddleware(reduxLogger));
+const store = createStore(reducer, applyMiddleware(reduxLogger, thunk, reduxPromise));
 
 export default store;
 
