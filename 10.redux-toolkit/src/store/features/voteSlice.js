@@ -22,6 +22,9 @@ const voteSlice = createSlice({
     }
 });
 
+// 从切片中获取actionCreator
+// 此处结构的方法和上面reducers中不是一个方法 仅仅是名字相同
 export let { support, oppose } = voteSlice.actions;
+console.log(support()) // {type: 'vote/support', payload: undefined}
 
 export default voteSlice.reducer;
