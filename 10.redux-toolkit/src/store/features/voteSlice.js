@@ -27,4 +27,18 @@ const voteSlice = createSlice({
 export let { support, oppose } = voteSlice.actions;
 console.log(support()) // {type: 'vote/support', payload: undefined}
 
+// 异步派发
+
+// export const setAsyncSup = async (el) => {
+//     return async (dispatch) => {
+//         await delay();
+//         dispatch(setSupNum(el));
+//     }
+// }
+
+export const setAsyncSup = async () => {
+    await delay();
+    return support();
+}
+
 export default voteSlice.reducer;

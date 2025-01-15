@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { support, oppose } from "../store/features/voteSlice";
+import { support, oppose, setAsyncSup } from "../store/features/voteSlice";
 
 const VoteFooter = () => {
     // useDispatch 获取派发的方法
@@ -8,7 +8,7 @@ const VoteFooter = () => {
         <div>
             VoteFooter:
             <button onClick={
-                () => dispatch(support())
+                () => dispatch(setAsyncSup())
             }>支持</button>
             <button onClick={
                 () => dispatch(oppose())
